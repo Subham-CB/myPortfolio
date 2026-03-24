@@ -50,41 +50,23 @@ const logoIconsList = [
     {
         imgPath: "/images/logos/company-logo-5.png",
     },
-    {
-        imgPath: "/images/logos/company-logo-6.png",
-    },
-    {
-        imgPath: "/images/logos/company-logo-7.png",
-    },
-    {
-        imgPath: "/images/logos/company-logo-8.png",
-    },
-    {
-        imgPath: "/images/logos/company-logo-9.png",
-    },
-    {
-        imgPath: "/images/logos/company-logo-10.png",
-    },
-    {
-        imgPath: "/images/logos/company-logo-11.png",
-    },
 ];
 
 const abilities = [
     {
         imgPath: "/images/seo.png",
         title: "Quality Focus",
-        desc: "Delivering high-quality results while maintaining attention to every detail.",
+        desc: "Committed to delivering well-structured, maintainable solutions with strong attention to detail and coding standards.",
     },
     {
         imgPath: "/images/chat.png",
         title: "Reliable Communication",
-        desc: "Keeping you updated at every step to ensure transparency and clarity.",
+        desc: "Ensuring clear and consistent communication within teams to align on requirements, progress, and deliverables.",
     },
     {
         imgPath: "/images/time.png",
         title: "On-Time Delivery",
-        desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
+        desc: "Focused on meeting deadlines by effectively managing tasks while maintaining high quality standards.",
     },
 ];
 
