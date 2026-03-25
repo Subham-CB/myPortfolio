@@ -92,31 +92,31 @@ const techStackImgs = [
 const techStackIcons = [
     {
         name: "Java",
-        modelPath: "/models/java.glb",
+        modelPath: `${import.meta.env.BASE_URL}models/java.glb`,
         scale: 0.8,
         rotation: [0, 0, 0],
     },
     {
         name: "React",
-        modelPath: "/models/react_logo-transformed.glb",
+        modelPath: `${import.meta.env.BASE_URL}models/react_logo-transformed.glb`,
         scale: 0.8,
         rotation: [0, 0, 0],
     },
     {
         name: "AWS",
-        modelPath: "/models/aws_logo.glb",
+        modelPath: `${import.meta.env.BASE_URL}models/aws_logo.glb`,
         scale: 0.2,
         rotation: [0, 0, 0],
     },
     {
         name: "Docker",
-        modelPath: "/models/docker_logo.glb",
+        modelPath: `${import.meta.env.BASE_URL}models/docker_logo.glb`,
         scale: 22,
         rotation: [0, 0, 0],
     },
     {
         name: "GIT",
-        modelPath: "/models/git-svg-transformed.glb",
+        modelPath: `${import.meta.env.BASE_URL}models/git-svg-transformed.glb`,
         scale: 0.04,
         rotation: [0, -Math.PI / 4, 0],
     },

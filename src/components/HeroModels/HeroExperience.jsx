@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import {Canvas} from "@react-three/fiber";
 import {OrbitControls} from "@react-three/drei";
 import {useMediaQuery} from "react-responsive";
@@ -24,13 +24,15 @@ const HeroExperience = () => {
             />
 
             <HeroLight />
-            <group
-            scale ={isMobile ? 0.7 : 1}
-            position = {[0,-3.5,0]}
-            rotation = {[0,-Math.PI/4,0]}>
+            <Suspense fallback={null}>
+                <group
+                scale ={isMobile ? 0.7 : 1}
+                position = {[0,-3.5,0]}
+                rotation = {[0,-Math.PI/4,0]}>
 
-                <Room />
-            </group>
+                    <Room />
+                </group>
+            </Suspense>
 
 
         </Canvas>
