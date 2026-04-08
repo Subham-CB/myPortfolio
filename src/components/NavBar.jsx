@@ -34,7 +34,7 @@ const NavBar = () => {
                             </li>
                         ))}
 
-                        <a href="/CV/SubhamDey_CV.pdf" download className="group">
+                        <a href={`${import.meta.env.BASE_URL}CV/SubhamDey_CV.pdf`} download className="group">
                             <div className="inner">
                                 <span>Download CV</span>
                                 <span className="underline"/>

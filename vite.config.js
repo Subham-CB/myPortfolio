@@ -9,13 +9,24 @@ export default defineConfig({
   ],
   base: process.env.NODE_ENV === 'production' ? '/subham-portfolio/' : '/',
   build: {
+    chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-three': ['three'],
-          'vendor-react-three': ['@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
-          'vendor-gsap': ['gsap', '@gsap/react'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'vendor-react';
+          }
+          if (id.includes('node_modules/three')) {
+            return 'vendor-three';
+          }
+          if (id.includes('node_modules/@react-three/fiber') ||
+              id.includes('node_modules/@react-three/drei') ||
+              id.includes('node_modules/@react-three/postprocessing')) {
+            return 'vendor-react-three';
+          }
+          if (id.includes('node_modules/gsap') || id.includes('node_modules/@gsap')) {
+            return 'vendor-gsap';
+          }
         },
       },
     },
