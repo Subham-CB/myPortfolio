@@ -1,3 +1,5 @@
+const baseurl = import.meta.env.BASE_URL;
+
 const navLinks = [
     {
         name: "Work",
@@ -13,15 +15,16 @@ const navLinks = [
     },
 ];
 
+
 const words = [
-    { text: "Ideas", imgPath: `${import.meta.env.BASE_URL}images/ideas.svg` },
-    { text: "Concepts", imgPath: `${import.meta.env.BASE_URL}images/concepts.svg` },
-    { text: "Designs", imgPath: `${import.meta.env.BASE_URL}images/designs.svg` },
-    { text: "Code", imgPath: `${import.meta.env.BASE_URL}images/code.svg` },
-    { text: "Ideas", imgPath: `${import.meta.env.BASE_URL}images/ideas.svg` },
-    { text: "Concepts", imgPath: `${import.meta.env.BASE_URL}images/concepts.svg` },
-    { text: "Designs", imgPath: `${import.meta.env.BASE_URL}images/designs.svg` },
-    { text: "Code", imgPath: `${import.meta.env.BASE_URL}images/code.svg` },
+    { text: "Ideas", imgPath: `${baseurl}images/ideas.svg` },
+    { text: "Concepts", imgPath: `${baseurl}images/concepts.svg` },
+    { text: "Designs", imgPath: `${baseurl}images/designs.svg` },
+    { text: "Code", imgPath: `${baseurl}images/code.svg` },
+    { text: "Ideas", imgPath: `${baseurl}images/ideas.svg` },
+    { text: "Concepts", imgPath: `${baseurl}images/concepts.svg` },
+    { text: "Designs", imgPath: `${baseurl}images/designs.svg` },
+    { text: "Code", imgPath: `${baseurl}images/code.svg` },
 ];
 
 const counterItems = [
@@ -32,35 +35,35 @@ const counterItems = [
 
 const logoIconsList = [
     {
-        imgPath: `${import.meta.env.BASE_URL}images/logos/company-logo-1.png`,
+        imgPath: `${baseurl}images/logos/company-logo-1.png`,
     },
     {
-        imgPath: `${import.meta.env.BASE_URL}images/logos/company-logo-2.png`,
+        imgPath: `${baseurl}images/logos/company-logo-2.png`,
     },
     {
-        imgPath: `${import.meta.env.BASE_URL}images/logos/company-logo-3.png`,
+        imgPath: `${baseurl}images/logos/company-logo-3.png`,
     },
     {
-        imgPath: `${import.meta.env.BASE_URL}images/logos/company-logo-4.png`,
+        imgPath: `${baseurl}images/logos/company-logo-4.png`,
     },
     {
-        imgPath: `${import.meta.env.BASE_URL}images/logos/company-logo-5.png`,
+        imgPath: `${baseurl}images/logos/company-logo-5.png`,
     },
 ];
 
 const abilities = [
     {
-        imgPath: `${import.meta.env.BASE_URL}images/seo.png`,
+        imgPath: `${baseurl}images/seo.png`,
         title: "Quality Focus",
         desc: "Committed to delivering well-structured, maintainable solutions with strong attention to detail and coding standards.",
     },
     {
-        imgPath: `${import.meta.env.BASE_URL}images/chat.png`,
+        imgPath: `${baseurl}images/chat.png`,
         title: "Reliable Communication",
         desc: "Ensuring clear and consistent communication within teams to align on requirements, progress, and deliverables.",
     },
     {
-        imgPath: `${import.meta.env.BASE_URL}images/time.png`,
+        imgPath: `${baseurl}images/time.png`,
         title: "On-Time Delivery",
         desc: "Focused on meeting deadlines by effectively managing tasks while maintaining high quality standards.",
     },
@@ -69,54 +72,54 @@ const abilities = [
 const techStackImgs = [
     {
         name: "React Developer",
-        imgPath: `${import.meta.env.BASE_URL}images/logos/react.png`,
+        imgPath: `${baseurl}images/logos/react.png`,
     },
     {
         name: "Python Developer",
-        imgPath: `${import.meta.env.BASE_URL}images/logos/python.svg`,
+        imgPath: `${baseurl}images/logos/python.svg`,
     },
     {
         name: "Backend Developer",
-        imgPath: `${import.meta.env.BASE_URL}images/logos/node.png`,
+        imgPath: `${baseurl}images/logos/node.png`,
     },
     {
         name: "Interactive Developer",
-        imgPath: `${import.meta.env.BASE_URL}images/logos/three.png`,
+        imgPath: `${baseurl}images/logos/three.png`,
     },
     {
         name: "Project Manager",
-        imgPath: `${import.meta.env.BASE_URL}images/logos/git.svg`,
+        imgPath: `${baseurl}images/logos/git.svg`,
     },
 ];
 
 const techStackIcons = [
     {
         name: "Java",
-        modelPath: `${import.meta.env.BASE_URL}models/java.glb`,
+        modelPath: `${baseurl}models/java.glb`,
         scale: 0.8,
         rotation: [0, 0, 0],
     },
     {
         name: "React",
-        modelPath: `${import.meta.env.BASE_URL}models/react_logo-transformed.glb`,
+        modelPath: `${baseurl}models/react_logo-transformed.glb`,
         scale: 0.8,
         rotation: [0, 0, 0],
     },
     {
         name: "AWS",
-        modelPath: `${import.meta.env.BASE_URL}models/aws_logo.glb`,
+        modelPath: `${baseurl}models/aws_logo.glb`,
         scale: 0.2,
         rotation: [0, 0, 0],
     },
     {
         name: "Docker",
-        modelPath: `${import.meta.env.BASE_URL}models/docker_logo.glb`,
+        modelPath: `${baseurl}models/docker_logo.glb`,
         scale: 22,
         rotation: [0, 0, 0],
     },
     {
         name: "GIT",
-        modelPath: `${import.meta.env.BASE_URL}models/git-svg-transformed.glb`,
+        modelPath: `${baseurl}models/git-svg-transformed.glb`,
         scale: 0.04,
         rotation: [0, -Math.PI / 4, 0],
     },
@@ -124,7 +127,7 @@ const techStackIcons = [
 
 const expCards = [
     {
-        logoPath: `${import.meta.env.BASE_URL}images/logo1.png`,
+        logoPath: `${baseurl}images/logo1.png`,
         title: "Senior Software Engineer",
         date: "June 2022 - February 2026",
         responsibilities: [
@@ -134,7 +137,7 @@ const expCards = [
         ],
     },
     {
-        logoPath: `${import.meta.env.BASE_URL}images/logo2.png`,
+        logoPath: `${baseurl}images/logo2.png`,
         title: "Java Developer",
         date: "September 2020 - February 2022",
         responsibilities: [
@@ -148,15 +151,15 @@ const expCards = [
 const expLogos = [
     {
         name: "logo1",
-        imgPath: `${import.meta.env.BASE_URL}images/logo1.png`,
+        imgPath: `${baseurl}images/logo1.png`,
     },
     {
         name: "logo2",
-        imgPath: `${import.meta.env.BASE_URL}images/logo2.png`,
+        imgPath: `${baseurl}images/logo2.png`,
     },
     {
         name: "logo3",
-        imgPath: `${import.meta.env.BASE_URL}images/logo3.png`,
+        imgPath: `${baseurl}images/logo3.png`,
     },
 ];
 
@@ -165,12 +168,12 @@ const socialImgs = [
     {
         name: "linkedin",
         url: "https://www.linkedin.com/in/subham-dey-8099a5203/",
-        imgPath: `${import.meta.env.BASE_URL}images/linkedin.png`,
+        imgPath: `${baseurl}images/linkedin.png`,
     },
     {
         name: "Github",
         url: "https://github.com/Subham-CB",
-        imgPath: `${import.meta.env.BASE_URL}images/github.png`,
+        imgPath: `${baseurl}images/github.png`,
     },
 ];
 
