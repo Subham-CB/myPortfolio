@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {navLinks} from "../constants/index.js";
-import {useState} from "react";
 
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,6 +15,8 @@ const NavBar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
 
     },[])
+
+    const closeMenu = () => setMenuOpen(false);
 
     return (
         <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`}>
@@ -43,13 +45,45 @@ const NavBar = () => {
                     </ul>
                 </nav>
 
-
-                <a href="#contact" className="contact-btn group">
+                <a href="#contact" className="contact-btn group hidden lg:flex">
                     <div className="inner">
                         <span>Contact me</span>
                     </div>
                 </a>
+
+                <button
+                    className="hamburger lg:hidden"
+                    onClick={() => setMenuOpen((prev) => !prev)}
+                    aria-label="Toggle menu"
+                    aria-expanded={menuOpen}
+                >
+                    <span className={`bar ${menuOpen ? 'open' : ''}`}/>
+                    <span className={`bar ${menuOpen ? 'open' : ''}`}/>
+                    <span className={`bar ${menuOpen ? 'open' : ''}`}/>
+                </button>
             </div>
+
+            {menuOpen && (
+                <nav className="mobile-menu">
+                    <ul>
+                        {navLinks.map(({link, name}) => (
+                            <li key={name}>
+                                <a href={link} onClick={closeMenu}>{name}</a>
+                            </li>
+                        ))}
+                        <li>
+                            <a href={`${import.meta.env.BASE_URL}CV/SubhamDey_CV.pdf`} download onClick={closeMenu}>
+                                Download CV
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onClick={closeMenu} className="mobile-contact-btn">
+                                Contact me
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            )}
         </header>
     )
 }
