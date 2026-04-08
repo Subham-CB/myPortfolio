@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {navLinks} from "../constants/index.js";
 
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const menuRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -13,13 +14,29 @@ const NavBar = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-
     },[])
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setMenuOpen(false);
+        };
+        const handleClickOutside = (e) => {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
+                setMenuOpen(false);
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     const closeMenu = () => setMenuOpen(false);
 
     return (
-        <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`}>
+        <header className={`navbar ${scrolled ? 'scrolled' : 'not-scrolled'}`} ref={menuRef}>
             <div className="inner">
                 <a className="logo" href="#hero">
                     S | D
@@ -63,27 +80,25 @@ const NavBar = () => {
                 </button>
             </div>
 
-            {menuOpen && (
-                <nav className="mobile-menu">
-                    <ul>
-                        {navLinks.map(({link, name}) => (
-                            <li key={name}>
-                                <a href={link} onClick={closeMenu}>{name}</a>
-                            </li>
-                        ))}
-                        <li>
-                            <a href={`${import.meta.env.BASE_URL}CV/SubhamDey_CV.pdf`} download onClick={closeMenu}>
-                                Download CV
-                            </a>
+            <nav className={`mobile-menu ${menuOpen ? 'mobile-menu-open' : ''}`} aria-hidden={!menuOpen}>
+                <ul>
+                    {navLinks.map(({link, name}) => (
+                        <li key={name}>
+                            <a href={link} onClick={closeMenu}>{name}</a>
                         </li>
-                        <li>
-                            <a href="#contact" onClick={closeMenu} className="mobile-contact-btn">
-                                Contact me
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            )}
+                    ))}
+                    <li>
+                        <a href={`${import.meta.env.BASE_URL}CV/SubhamDey_CV.pdf`} download onClick={closeMenu}>
+                            Download CV
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" onClick={closeMenu} className="mobile-contact-btn">
+                            Contact me
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
     )
 }

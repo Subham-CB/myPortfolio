@@ -191,7 +191,14 @@ section {
     }
 
     .mobile-menu {
-      @apply lg:hidden bg-black border-t border-black-50 px-5 py-6;
+      @apply lg:hidden bg-black border-t border-black-50 px-5 overflow-hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+
+      &.mobile-menu-open {
+        max-height: 400px;
+        @apply py-6;
+      }
 
       ul {
         @apply flex flex-col gap-5;
