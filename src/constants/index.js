@@ -2,10 +2,6 @@ const baseurl = import.meta.env.BASE_URL;
 
 const navLinks = [
     {
-        name: "Work",
-        link: "#work",
-    },
-    {
         name: "Experience",
         link: "#experience",
     },
